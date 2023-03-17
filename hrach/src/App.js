@@ -9,6 +9,9 @@ import Layout from "./Pages/Layout";
 import styled from "styled-components";
 import Faculties from "./Pages/Faculties";
 import ApplyNow from "./Pages/ApplyNow";
+import InternationalDep from "./Pages/InternationalDep";
+import About from "./Pages/About";
+import Students from "./Pages/Students";
 
 
 const AppWrapper = styled.div`
@@ -28,8 +31,11 @@ export default function App() {
                   <Route path="/" element={<Layout />} >
                       <Route index element={<Home />} />
                       <Route path="student-life" element={<StudentLife />} />
+                      <Route path="international-department" element={<InternationalDep />} />
                       <Route path="tuition-fees" element={<TuitionFees />} />
                       <Route path="faculties" element={<Faculties />} />
+                      <Route path="about" element={<About />} />
+                      <Route path="students" element={<Students />} />
                       <Route path="apply-now" element={<ApplyNow />} />
                       <Route path="*" element={<NoPage />} />
                   </Route>

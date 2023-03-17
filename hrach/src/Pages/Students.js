@@ -1,6 +1,7 @@
 import {Rctable} from "../RC-TABLE/RcTable";
 import styled from "styled-components";
 import {AnnualTable} from "../ANNUAL-TABLE/RcTable";
+import {StudentsTable} from "./StudentsTable/StudentsTable";
 
 
 const TuitionsWrapper  = styled.div`
@@ -30,21 +31,15 @@ const Containers  = styled.div`
     text-align: center;
     `
 
-const TuitionFees = () => {
+const Students = () => {
     return <TuitionsWrapper>
         <Text2>
-            B.A. tuition Fees
+            Students
         </Text2>
         <Containers>
-            <Rctable />
-        </Containers>
-        <Text2>
-            ANNUAL TUITION FEES OF EU MASTERS DEGREE ACCORDING TO EACH PROFESSIONS
-        </Text2>
-        <Containers>
-            <AnnualTable />
+            <StudentsTable />
         </Containers>
     </TuitionsWrapper>
 };
 
-export default TuitionFees;
+export default Students;

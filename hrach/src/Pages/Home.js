@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 const HomeWrapper = styled.div`
   width: inherit;
@@ -31,6 +32,13 @@ const Text2 = styled.div`
 `;
 
 
+const TextTitle = styled.div`
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+`;
+
+
 const Text3 = styled.div`
   position: relative;
   width: 301px;
@@ -47,11 +55,14 @@ const Text3 = styled.div`
 `;
 
 const SerKubik = styled.div`
-  font-size: 20px;
+  font-size: 25px;
   color: #ffffff;
 `;
 
 const RubikKubik = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   width: 250px;
   height: 250px;
@@ -61,6 +72,7 @@ const RubikKubik = styled.div`
   border-style: solid;
   background: #292f51;
   margin: 5px;
+  padding: 10px;
 `
 
 const RubikKubikBac = styled.div`
@@ -73,13 +85,14 @@ const RubikKubikBac = styled.div`
   border-width: 1px;
   border-style: solid;
   background: #adadad;
-  margin: 5px
+  margin: 5px;
+  padding: 0 30px;
 `
 
 const Gazaraguyn = styled.div`
   position: relative;
-  width: 510px;
-  height: 250px;
+  width: 632px;
+  height: 268px;
   border-color: #707070;
   border-width: 1px;
   border-style: solid;
@@ -110,7 +123,7 @@ const PositionAbsolute = styled.div`
 `
 
 const GazarWrapper = styled.div`
-  margin: 60px 100px
+  margin: 50px 80px;
 `;
 
 const TextWithBorder = styled.div`
@@ -121,6 +134,29 @@ const TextWithBorder = styled.div`
   padding: 10px 20px;
   border: 1px solid white;
 `
+
+const Divider = styled.div`
+  border-top: 1px solid white;
+  width: 30%;
+`;
+
+const TextRight = styled.div`
+  display: flex;
+  padding: 10px;
+  flex-direction: row-reverse;
+`
+
+const ApplyButton = styled.div`
+  color: white;
+  width: max-content;
+  padding:10px 60px;
+  border: 1px solid white;
+  margin: 10px 0;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Home = () => {
     return <>
@@ -147,47 +183,75 @@ const Home = () => {
 
 <ColumnWrapper>
     <RubikKubik>
-        There is no passion to be found in playing small, in settling for a life that is less than the one you are capable of living. —Nelson Mandela
-
+        <div>Jane</div>
+        <br/>
+        <div>
+            European university is a really friendly place to be, the staff are approachable and helpful. My student life rep is
+            brilliant and has been supportive and really welcoming. There are lots of opportunities to be around
+            animals and to new skills.
+        </div>
+        <br/>
+        <Divider/>
+        <TextRight>
+            Aug 13 2020
+        </TextRight>
     </RubikKubik>
 </ColumnWrapper>
                 <ColumnWrapper>
-    <RubikKubik>
-        There is no passion to be found in playing small, in settling for a life that is less than the one you are capable of living. —Nelson Mandela
-
-    </RubikKubik>
-</ColumnWrapper>
+                    <RubikKubik>
+                        <div>Judy</div>
+                        <br/>
+                        <div>
+                            Really good lectures that are happy to give extra help and support if someone is confused with that
+                            certain topic, they go over every assessment weekly and help to give you support if any is needed
+                        </div>
+                        <br/>
+                        <Divider/>
+                        <TextRight>
+                            Dec 24 2022
+                        </TextRight>
+                    </RubikKubik>
+                </ColumnWrapper>
             </RowWrapper>
         </ColumnWrapper>
         <ColumnWrapper>
             <RowWrapper>
                 <ColumnWrapper>
                     <RubikKubikBac>
-                        <Text>5 OCT 2023</Text>
-
+                        <br/>
+                        <TextTitle>15 SEP 2023</TextTitle>
+                    <br/>
                         <SerKubik>
                             Electronic Engineering and Computer Science short term
-
                         </SerKubik>
+                        <StyledLink to="/apply-now">
+                            <ApplyButton>Apply</ApplyButton>
+                        </StyledLink>
                     </RubikKubikBac>
                 </ColumnWrapper>
                 <ColumnWrapper>
                     <RubikKubikBac>
-                        <Text>5 OCT 2023</Text>
+                        <br/>
+                        <TextTitle>5 OCT 2023</TextTitle>
+                        <br/>
                         <SerKubik>
                             Fundamentals of design
                             Graphics Design
                             short term
                         </SerKubik>
-
+                        <StyledLink to="/apply-now">
+                            <ApplyButton>Apply</ApplyButton>
+                        </StyledLink>
                     </RubikKubikBac>
                 </ColumnWrapper>
             </RowWrapper>
             <RowWrapper>
                 <Gazaraguyn>
                     <GazarWrapper>
-                        <Text>Become a student at the Harper University of Information Technologies</Text>
+                        <Text2>Become a student at the European University of Information Technologies</Text2>
+                        <StyledLink to="/apply-now">
                         <TextWithBorder>Application admission</TextWithBorder>
+                        </StyledLink>
                     </GazarWrapper>
                 </Gazaraguyn>
             </RowWrapper>

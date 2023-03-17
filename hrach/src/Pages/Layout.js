@@ -96,21 +96,32 @@ const Scrollable = styled.div`
   overflow: scroll;
 `
 
+const StyledLiComponent = styled.li`
+  && {
+    :hover{
+      opacity: 0.5;
+    }
+  }
+`;
+
 const Layout = () => {
     return (
         <Scrollable>
         <div>
             <StyledNav>
                 <LeftSideRoutes>
-                    <li>
+                    <StyledLiComponent>
                         <StyledLink to="/">Administration</StyledLink>
-                    </li>
-                    <li>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
                         <StyledLink to="/student-life">Student life</StyledLink>
-                    </li>
-                    <li>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
+                        <StyledLink to="/international-department">International department</StyledLink>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
                         <StyledLink to="/tuition-fees">Tuition fees</StyledLink>
-                    </li>
+                    </StyledLiComponent>
                 </LeftSideRoutes>
                 <ContactInfoWrapper>
                     <Info>
@@ -126,18 +137,21 @@ const Layout = () => {
             </StyledNav>
             <StyledNavRight>
                 <RightSideRoutes>
-                    <li>
-                        <StyledLink to="/">About</StyledLink>
-                    </li>
-                    <li>
+                    <StyledLiComponent>
+                        <StyledLink to="/about">About</StyledLink>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
+                        <StyledLink to="/students">Students</StyledLink>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
                         <StyledLink to="/faculties">Faculties</StyledLink>
-                    </li>
-                    <li>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
                         <StyledLink to="/tuition-fees">Department</StyledLink>
-                    </li>
-                    <li>
+                    </StyledLiComponent>
+                    <StyledLiComponent>
                         <StyledLink to="/apply-now">Apply now</StyledLink>
-                    </li>
+                    </StyledLiComponent>
                 </RightSideRoutes>
             </StyledNavRight>
         </div>

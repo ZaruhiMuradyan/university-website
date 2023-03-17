@@ -1,6 +1,6 @@
 import Table from "rc-table";
 
-export const Rctable = () => {
+export const AnnualTable = () => {
     const columns = [
         {
             title: "Profession",
@@ -38,38 +38,38 @@ export const Rctable = () => {
 const data = [
     {
         profession: "Information Technologies",
-        fullTime: "582.000",
-        fullTimeF: "870.000 ",
-        partTime: "465.000",
-        partTimeF: "692.000",
+        fullTime: "570.000",
+        fullTimeF: "960.000 ",
+        partTime: "-",
+        partTimeF: "-",
     },
     {
         profession: "Linguistics",
-        fullTime: "516.000",
-        fullTimeF: "-",
-        partTime: "412.000",
-        partTimeF: "692.000",
+        fullTime: "552.000",
+        fullTimeF: "960.000 ",
+        partTime: "-",
+        partTimeF: "-",
     },
     {
         profession: "Law",
-        fullTime: "600.000",
-        fullTimeF: "870.000 ",
-        partTime: "480.000",
-        partTimeF: "692.000",
+        fullTime: "690.000",
+        fullTimeF: "960.000 ",
+        partTime: "552.000",
+        partTimeF: "768.000",
     },
     {
         profession: "Psychology",
-        fullTime: "516.000",
-        fullTimeF: "870.000 ",
-        partTime: "412.000",
-        partTimeF: "692.000",
+        fullTime: "552.000",
+        fullTimeF: "960.000 ",
+        partTime: "-",
+        partTimeF: "-",
     },
     {
         profession: "Graphic Design   ",
-        fullTime: "588.000",
-        fullTimeF: "870.000 ",
-        partTime: "470.000",
-        partTimeF: "692.000",
+        fullTime: "570.000",
+        fullTimeF: "960.000 ",
+        partTime: "-",
+        partTimeF: "-",
     }
 ];
      return (
