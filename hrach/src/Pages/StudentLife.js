@@ -19,12 +19,16 @@ const TextWrapper = styled.div`
   flex-wrap: wrap-reverse;
   width: 50%;
   padding-top: 40px;
+  z-index: 1000000;
+  opacity: 1;
+  padding-left: 30px;
 `;
 
 const Text = styled.div`
   color: white;
   font-style: italic;
   font-size: 40px;
+  font-weight: 700;
 `;
 
 const SlideshowContainer = styled.div`
@@ -49,7 +53,7 @@ const StudentLife = () => {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+        dots[slideIndex-1].className += "active";
         setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
 
@@ -59,28 +63,23 @@ const StudentLife = () => {
 
     return <div>
         <TextWrapper>
-            <Text>It's not about perfect. It's about effort.
-            </Text>
-            <Text>I need to add some activities about students and about the city, Yerevan some pics
-            </Text>
+            <Text>It's not about perfect. It's about effort.</Text>
+            <Text>I need to add some activities about students and about the city, Yerevan some pics</Text>
         </TextWrapper>
         <SlideshowContainer>
                 <div className="mySlides fade">
-                    <div className="numbertext">1 / 3</div>
+                    <div className="numbertext"/>
                     <img src="1.jpg" />
-                        <div className="text">Caption Text</div>
                 </div>
 
                 <div className="mySlides fade">
-                    <div className="numbertext">2 / 3</div>
+                    <div className="numbertext"/>
                     <img src="2.jpeg"/>
-                        <div className="text">Caption Two</div>
                 </div>
 
                 <div className="mySlides fade">
-                    <div className="numbertext">3 / 3</div>
+                    <div className="numbertext"/>
                     <img src="3.jpg" />
-                        <div className="text">Caption Three</div>
                 </div>
 
             </SlideshowContainer>

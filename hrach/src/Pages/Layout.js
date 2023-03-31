@@ -147,7 +147,7 @@ const Layout = () => {
                         <StyledLink to="/faculties">Faculties</StyledLink>
                     </StyledLiComponent>
                     <StyledLiComponent>
-                        <StyledLink to="/tuition-fees">Department</StyledLink>
+                        <StyledLink to="/department">Department</StyledLink>
                     </StyledLiComponent>
                     <StyledLiComponent>
                         <StyledLink to="/apply-now">Apply now</StyledLink>

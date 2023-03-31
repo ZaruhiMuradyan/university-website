@@ -12,6 +12,7 @@ import ApplyNow from "./Pages/ApplyNow";
 import InternationalDep from "./Pages/InternationalDep";
 import About from "./Pages/About";
 import Students from "./Pages/Students";
+import Department from "./Pages/Department";
 
 
 const AppWrapper = styled.div`
@@ -34,6 +35,7 @@ export default function App() {
                       <Route path="international-department" element={<InternationalDep />} />
                       <Route path="tuition-fees" element={<TuitionFees />} />
                       <Route path="faculties" element={<Faculties />} />
+                      <Route path="department" element={<Department />} />
                       <Route path="about" element={<About />} />
                       <Route path="students" element={<Students />} />
                       <Route path="apply-now" element={<ApplyNow />} />

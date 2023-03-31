@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useState} from "react";
 
 
 const ApplyNowWrapper = styled.div`
@@ -29,7 +30,18 @@ const StyledInput = styled.input`
   border-width: 1px;
   border-style: solid;
   border-radius: 35px;
+  padding-left: 20px;
 
+  background: #ffffff
+`;
+const Apply = styled.button`
+  width: 200px;
+  height: 30px;
+
+  border-color: #707070;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 35px;
 
   background: #ffffff
 `;
@@ -42,6 +54,7 @@ const StyledInputLarge = styled.input`
   border-width: 1px;
   border-style: solid;
   border-radius: 35px;
+  padding-left: 20px;
 
 
   background: #ffffff
@@ -58,6 +71,14 @@ const FlexRow = styled.div`
 const FlexColumn = styled.div`
   display: flex;
   column-gap: 40px;
+  align-content: center;
+  align-items: self-end;
+`;
+
+
+const GenderColumn = styled.div`
+  display: flex;
+  column-gap: 10px;
   align-content: center;
   align-items: self-end;
 `;
@@ -89,84 +110,100 @@ const CheckboxWrapper = styled.div`
   width: 300px;
 `;
 
+const  ThankYou = styled.div`
+  font-size: 40px;
+  color: white;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  width: 1000px;
+  
+`
+
 const ApplyNow = () => {
+    const [submitted,setSubmitted] = useState(false);
+
     const handleSubmit = (event) => {
-        event.preventDefault();
+        setSubmitted(true);
     };
     return <ApplyNowWrapper>
         <Title>COLLEGE ADDMISSIONS FORM</Title>
-        <FormWrapper>
-            <FlexColumn>
-                <FlexRow>
-                    Name
-                    <StyledInput id="text" type="text" />
-                    First Name
-                </FlexRow>
-                <FlexRow>
-                    <StyledInput id="text" type="text" />
-                    Middle Name
-                </FlexRow>
-                <FlexRow>
-                    <StyledInput id="text" type="text" />
-                    Last Name
-                </FlexRow>
-            </FlexColumn>
+        {submitted ?
+            <ThankYou>Your application has been successfully submitted! We will contact you shortly.</ThankYou>
+        :
+            <FormWrapper>
+                <FlexColumn>
+                    <FlexRow>
+                        Name
+                        <StyledInput id="text" type="text" />
+                        First Name
+                    </FlexRow>
+                    <FlexRow>
+                        <StyledInput id="text" type="text" />
+                        Middle Name
+                    </FlexRow>
+                    <FlexRow>
+                        <StyledInput id="text" type="text" />
+                        Last Name
+                    </FlexRow>
+                </FlexColumn>
 
-            <FlexColumn>
-                <FlexRow>
-                   Birth Date
-                    <StyledInput id="text" type="text" />
-                    Month
-                </FlexRow>
-                <FlexRow>
-                    <StyledInput id="text" type="text" />
-                    Day
-                </FlexRow>
-                <FlexRow>
+                <FlexColumn>
+                    <FlexRow>
+                        Birth Date
+                        <StyledInput id="text" type="text" />
+                        Month
+                    </FlexRow>
+                    <FlexRow>
+                        <StyledInput id="text" type="text" />
+                        Day
+                    </FlexRow>
+                    <FlexRow>
 
-                    <StyledInput id="text" type="text" />
-                    Year
-                </FlexRow>
-            </FlexColumn>
+                        <StyledInput id="text" type="text" />
+                        Year
+                    </FlexRow>
+                </FlexColumn>
 
-            <FlexColumn>
-                <FlexRow>
-                    Gender
-                    <CheckboxWrapper>
-                        <FlexRow>
-                            <FlexColumn>
-                                <Checkbox type='radio'  /> Male</FlexColumn>
-                        </FlexRow>
-                        <FlexRow>
-                            <FlexColumn>
-                                <Checkbox type='radio'  /> Female</FlexColumn>
-                        </FlexRow>
-                    </CheckboxWrapper>
-                </FlexRow>
+                <FlexColumn>
+                    <FlexRow>
+                        Gender
+                        <CheckboxWrapper>
+                            <FlexRow>
+                                <GenderColumn>
+                                    <Checkbox type='radio'  /> Male</GenderColumn>
+                            </FlexRow>
+                            <FlexRow>
+                                <GenderColumn>
+                                    <Checkbox type='radio'  /> Female</GenderColumn>
+                            </FlexRow>
+                        </CheckboxWrapper>
+                    </FlexRow>
 
-                <FlexRow>
-                    Of which country are you a citizen ?
-                    <StyledInputLarge id="text" type="text" />
-                    <div></div>
-                </FlexRow>
-            </FlexColumn>
-            <FlexColumn>
-                <FlexRow>
-                    Phone
-                    <StyledInputLarge id="text" type="text" />
+                    <FlexRow>
+                        Of which country are you a citizen ?
+                        <StyledInputLarge id="text" type="text" />
+                        <div></div>
+                    </FlexRow>
+                </FlexColumn>
+                <FlexColumn>
+                    <FlexRow>
+                        Phone
+                        <StyledInputLarge id="text" type="text" />
 
-                </FlexRow>
-                <FlexRow>
-                    E- mail Address
-                    <StyledInputLarge id="text" type="text" />
-                    <div></div>
-                </FlexRow>
-            </FlexColumn>
-            <Centered>
-                <StyledInput id="text" type="submit" value='Apply' onSubmit={handleSubmit}/>
+                    </FlexRow>
+                    <FlexRow>
+                        E- mail Address
+                        <StyledInputLarge id="text" type="text" />
+                        <div></div>
+                    </FlexRow>
+                </FlexColumn>
+                <Centered>
+                    <Apply id="text" type="submit" onClick={handleSubmit}>Apply</Apply>
+                </Centered>
+            </FormWrapper>
 
-            </Centered>
-        </FormWrapper>
+        }
     </ApplyNowWrapper>
 };
 

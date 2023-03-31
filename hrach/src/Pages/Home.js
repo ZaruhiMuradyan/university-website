@@ -34,7 +34,7 @@ const Text2 = styled.div`
 
 const TextTitle = styled.div`
   color: white;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
 `;
 
@@ -55,7 +55,7 @@ const Text3 = styled.div`
 `;
 
 const SerKubik = styled.div`
-  font-size: 25px;
+  font-size: 20px;
   color: #ffffff;
 `;
 
@@ -87,12 +87,13 @@ const RubikKubikBac = styled.div`
   background: #adadad;
   margin: 5px;
   padding: 0 30px;
+  justify-content: space-between;
 `
 
 const Gazaraguyn = styled.div`
   position: relative;
   width: 632px;
-  height: 268px;
+  height: 249px;
   border-color: #707070;
   border-width: 1px;
   border-style: solid;
@@ -158,6 +159,10 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const Description = styled.div`
+  font-size: 14px;
+`
+
 const Home = () => {
     return <>
 
@@ -185,11 +190,11 @@ const Home = () => {
     <RubikKubik>
         <div>Jane</div>
         <br/>
-        <div>
+        <Description>
             European university is a really friendly place to be, the staff are approachable and helpful. My student life rep is
             brilliant and has been supportive and really welcoming. There are lots of opportunities to be around
             animals and to new skills.
-        </div>
+        </Description>
         <br/>
         <Divider/>
         <TextRight>
@@ -201,10 +206,10 @@ const Home = () => {
                     <RubikKubik>
                         <div>Judy</div>
                         <br/>
-                        <div>
+                        <Description>
                             Really good lectures that are happy to give extra help and support if someone is confused with that
                             certain topic, they go over every assessment weekly and help to give you support if any is needed
-                        </div>
+                        </Description>
                         <br/>
                         <Divider/>
                         <TextRight>

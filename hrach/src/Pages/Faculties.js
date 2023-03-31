@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 
 const Wrapppper = styled.div`
@@ -53,6 +54,11 @@ const Text = styled.div`
   margin-bottom: 30px;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white
+`
+
 const Faculties = () => {
     return <Wrapppper>
         <Title> Our Faculties</Title>
@@ -73,7 +79,11 @@ const Faculties = () => {
         <CubeWrapper>
             <Cube>
                 <Text>Linguistics</Text>
+                <StyledLink to="/apply-now">
+                    <StyledLink to="/apply-now">
                 <JoinNow> Join now</JoinNow>
+                    </StyledLink>
+                </StyledLink>
             </Cube>
             <div>
                 Linguistics is the scientific study of language, and its focus is the systematic investigation of the
@@ -84,7 +94,9 @@ const Faculties = () => {
         <CubeWrapper>
             <Cube>
                 <Text>Psychology</Text>
+                <StyledLink to="/apply-now">
                 <JoinNow> Join now</JoinNow>
+                </StyledLink>
             </Cube>
             Psychology is the scientific study of the mind and behavior. Psychologists are actively involved in
             studying and understanding mental processes, brain functions, and behavior.
@@ -92,7 +104,9 @@ const Faculties = () => {
         <CubeWrapper>
             <Cube>
                 <Text>Robotics</Text>
+                <StyledLink to="/apply-now">
                 <JoinNow> Join now</JoinNow>
+                </StyledLink>
                 </Cube>
             A robotics engineering degree program teaches you how to design and build robots. In your courses,
             you&#39;ll learn about mechanical and electrical engineering, chemistry, computer science, and physics.
@@ -100,8 +114,9 @@ const Faculties = () => {
         <CubeWrapper>
             <Cube>
                 <Text>Graphics Design</Text>
-                <JoinNow> Join now</JoinNow>
-                </Cube>
+                <StyledLink to="/apply-now">
+                    <JoinNow> Join now</JoinNow>
+                </StyledLink>                </Cube>
             Graphic design is a craft where professionals create visual content to communicate messages. By
             applying visual hierarchy and page layout techniques, designers use typography and pictures to meet
             users.
