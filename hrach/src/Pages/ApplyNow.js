@@ -116,7 +116,12 @@ const  ThankYou = styled.div`
   align-self: center;
   align-content: center;
   justify-self: center;
+  align-items: center;
   width: 1000px;
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
   
 `
 
@@ -130,6 +135,7 @@ const ApplyNow = () => {
         <Title>COLLEGE ADDMISSIONS FORM</Title>
         {submitted ?
             <ThankYou>Your application has been successfully submitted! We will contact you shortly.</ThankYou>
+
         :
             <FormWrapper>
                 <FlexColumn>

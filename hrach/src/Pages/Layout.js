@@ -92,6 +92,11 @@ const ContactStyledText  = styled.p`
     font-size: 10px;
 `
 
+const SignOut  = styled.p`
+    font-size: 20px;
+  padding-left: 10px;
+`
+
 const Scrollable = styled.div`
   overflow: scroll;
 `
@@ -132,6 +137,9 @@ const Layout = () => {
                         <PhoneIcon src="phone.png"/>
                         <ContactStyledText >+982 234 543 321
                         </ContactStyledText >
+                        <StyledLink to="/sign-in">
+                            <SignOut>Sign out</SignOut>
+                        </StyledLink>
                     </Info>
                 </ContactInfoWrapper>
             </StyledNav>

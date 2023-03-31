@@ -13,6 +13,7 @@ import InternationalDep from "./Pages/InternationalDep";
 import About from "./Pages/About";
 import Students from "./Pages/Students";
 import Department from "./Pages/Department";
+import SignIn from "./Pages/SignIn";
 
 
 const AppWrapper = styled.div`
@@ -35,6 +36,7 @@ export default function App() {
                       <Route path="international-department" element={<InternationalDep />} />
                       <Route path="tuition-fees" element={<TuitionFees />} />
                       <Route path="faculties" element={<Faculties />} />
+                      <Route path="sign-in" element={<SignIn />} />
                       <Route path="department" element={<Department />} />
                       <Route path="about" element={<About />} />
                       <Route path="students" element={<Students />} />
