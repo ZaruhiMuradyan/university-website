@@ -2,14 +2,6 @@ import styled from "styled-components";
 import "./StudentLife.css";
 import {useEffect} from "react";
 
-const StudentLifeWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 600px;
-  width: 100%;
-  z-index: 10000;
-`;
 
 const TextWrapper = styled.div`
   display: flex;
@@ -64,7 +56,8 @@ const StudentLife = () => {
     return <div>
         <TextWrapper>
             <Text>It's not about perfect. It's about effort.</Text>
-            <Text>I need to add some activities about students and about the city, Yerevan some pics</Text>
+            <Text>Yerevan, Armenia, is generally a safe, friendly and vibrant city with attractive architecture and rich history.</Text>
+            <Text>Nicknamed the ‘pink city’, Yerevan is a city where strolling allows you to see plenty.</Text>
         </TextWrapper>
         <SlideshowContainer>
                 <div className="mySlides fade">
@@ -91,11 +84,6 @@ const StudentLife = () => {
                     <span className="dot"></span>
                 </div>
             </div>
-
-    {/*    return <StudentLifeWrapper>*/}
-    {/*    */}
-
-    {/*</StudentLifeWrapper>*/}
 };
 
 export default StudentLife;
