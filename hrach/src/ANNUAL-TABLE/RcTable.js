@@ -1,6 +1,6 @@
 import Table from "rc-table";
 
-export const AnnualTable = () => {
+export const AnnualTable = ({data}) => {
     const columns = [
         {
             title: "Profession",
@@ -35,43 +35,6 @@ export const AnnualTable = () => {
     ];
 
 
-const data = [
-    {
-        profession: "Information Technologies",
-        fullTime: "570.000",
-        fullTimeF: "960.000 ",
-        partTime: "-",
-        partTimeF: "-",
-    },
-    {
-        profession: "Linguistics",
-        fullTime: "552.000",
-        fullTimeF: "960.000 ",
-        partTime: "-",
-        partTimeF: "-",
-    },
-    {
-        profession: "Law",
-        fullTime: "690.000",
-        fullTimeF: "960.000 ",
-        partTime: "552.000",
-        partTimeF: "768.000",
-    },
-    {
-        profession: "Psychology",
-        fullTime: "552.000",
-        fullTimeF: "960.000 ",
-        partTime: "-",
-        partTimeF: "-",
-    },
-    {
-        profession: "Graphic Design   ",
-        fullTime: "570.000",
-        fullTimeF: "960.000 ",
-        partTime: "-",
-        partTimeF: "-",
-    }
-];
      return (
          <Table
              columns={columns}

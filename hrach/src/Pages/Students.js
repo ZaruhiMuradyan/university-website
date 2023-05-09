@@ -2,6 +2,7 @@ import {Rctable} from "../RC-TABLE/RcTable";
 import styled from "styled-components";
 import {AnnualTable} from "../ANNUAL-TABLE/RcTable";
 import {StudentsTable} from "./StudentsTable/StudentsTable";
+import {connect} from "react-redux";
 
 
 const TuitionsWrapper  = styled.div`
@@ -31,15 +32,20 @@ const Containers  = styled.div`
     text-align: center;
     `
 
-const Students = () => {
+const Students = ({data}) => {
     return <TuitionsWrapper>
         <Text2>
             Students
         </Text2>
         <Containers>
-            <StudentsTable />
+            <StudentsTable data={data} />
         </Containers>
     </TuitionsWrapper>
 };
 
-export default Students;
+
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps)(Students);

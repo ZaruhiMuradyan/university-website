@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {useState} from "react";
+import {useCallback, useState} from "react";
+import { Dropdown } from 'primereact/dropdown';
 
 
 const ApplyNowWrapper = styled.div`
@@ -32,7 +33,9 @@ const StyledInput = styled.input`
   border-radius: 35px;
   padding-left: 20px;
 
-  background: #ffffff
+  background: #ffffff;
+  color: grey;
+  font-size: 16px
 `;
 const Apply = styled.button`
   width: 200px;
@@ -47,23 +50,27 @@ const Apply = styled.button`
 `;
 
 const StyledInputLarge = styled.input`
+  position: relative;
   width: 300px;
   height: 30px;
-
+cursor: pointer;
   border-color: #707070;
   border-width: 1px;
   border-style: solid;
   border-radius: 35px;
   padding-left: 20px;
 
-
-  background: #ffffff
+  background: #ffffff;
+  color: grey;
+  font-size: 16px
 `;
 
 const FlexRow = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  height: 70px;
 `;
 
 
@@ -73,6 +80,9 @@ const FlexColumn = styled.div`
   column-gap: 40px;
   align-content: center;
   align-items: self-end;
+  width: 800px;
+  justify-content: space-between;
+  height: 75px;
 `;
 
 
@@ -90,6 +100,7 @@ const FormWrapper = styled.div`
   margin: auto;
   align-items: center;
   align-content: center;
+  width: 600px;
 `;
 
 const Centered = styled.div`
@@ -107,7 +118,7 @@ const Checkbox = styled.input`
 const CheckboxWrapper = styled.div`
   display: flex;
   align-content: center;
-  width: 300px;
+  width: 200px;
 `;
 
 const  ThankYou = styled.div`
@@ -123,14 +134,69 @@ const  ThankYou = styled.div`
   text-align: center;
   border-radius: 10px;
   
-`
+`;
+
+const Absolute = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  position: absolute;
+  background-color: white;
+  top: 55px;
+  border-radius: 11px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999999999;
+  border: 1px solid grey;
+  
+`;
+
+const DropdownItem = styled.div`
+  display: flex;
+    padding: 5px;
+  cursor: pointer;
+  flex-grow:1;
+  width: 100%;
+  justify-content: center;
+  && {
+    :hover{
+     background-color: grey;
+      color: white;
+      border-radius: 10px
+    }
+  }
+`;
 
 const ApplyNow = () => {
     const [submitted,setSubmitted] = useState(false);
+    const [open, setOpen] = useState(false);
+    const specialities = ["Information technologies", "Graphics", "Robotics", "Linguistics"];
+
+    const [selectedItem, setSelectedItem] = useState(specialities[0]);
+    const handleOpen = () => {
+        setOpen(!open);
+    };
+
 
     const handleSubmit = (event) => {
         setSubmitted(true);
     };
+
+    const handleSelect = useCallback( (item) => {
+        setOpen(false);
+        setSelectedItem(item);
+
+    });
+
+    const NameWrapper = styled.div`
+      height: 20px;
+    `;
+
+    const CheckboxWrappppper = styled.div`
+      padding-top: 10px;
+    `;
+
     return <ApplyNowWrapper>
         <Title>COLLEGE ADDMISSIONS FORM</Title>
         {submitted ?
@@ -140,57 +206,87 @@ const ApplyNow = () => {
             <FormWrapper>
                 <FlexColumn>
                     <FlexRow>
-                        Name
+                        <NameWrapper>
+                            Name
+                        </NameWrapper>
+
                         <StyledInput id="text" type="text" />
-                        First Name
+                        <NameWrapper>
+                            First Name
+                        </NameWrapper>
+
                     </FlexRow>
                     <FlexRow>
+                        <NameWrapper/>
                         <StyledInput id="text" type="text" />
-                        Middle Name
+                        <NameWrapper>Middle Name</NameWrapper>
+
                     </FlexRow>
                     <FlexRow>
+                        <NameWrapper/>
                         <StyledInput id="text" type="text" />
-                        Last Name
+                        <NameWrapper> Last Name</NameWrapper>
                     </FlexRow>
                 </FlexColumn>
 
                 <FlexColumn>
                     <FlexRow>
-                        Birth Date
-                        <StyledInput id="text" type="text" />
-                        Month
+                        <CheckboxWrappppper>
+                            <NameWrapper>Gender</NameWrapper>
+                            <CheckboxWrapper>
+                                <FlexRow>
+                                <GenderColumn>
+                                    <Checkbox type='radio'  /> Male</GenderColumn>
+                                 </FlexRow>
+                                <FlexRow>
+                                <GenderColumn>
+                                    <Checkbox type='radio'  /> Female</GenderColumn>
+                                </FlexRow>
+                            </CheckboxWrapper>
+                        <NameWrapper/>
+                        </CheckboxWrappppper>
                     </FlexRow>
                     <FlexRow>
-                        <StyledInput id="text" type="text" />
-                        Day
+                        <NameWrapper>Birth Date</NameWrapper>
+                        <StyledInput id="text" type="text" placeholder="01/01/2000" />
+                        <NameWrapper>Month/Day/Year</NameWrapper>
                     </FlexRow>
                     <FlexRow>
-
-                        <StyledInput id="text" type="text" />
-                        Year
+                        <NameWrapper>    Of which country are you a citizen ?</NameWrapper>
+                        <StyledInputLarge id="text" type="text" />
+                        <NameWrapper/>
                     </FlexRow>
                 </FlexColumn>
 
                 <FlexColumn>
                     <FlexRow>
-                        Gender
+                    <CheckboxWrappppper>
+                        <NameWrapper> Degree </NameWrapper>
                         <CheckboxWrapper>
                             <FlexRow>
                                 <GenderColumn>
-                                    <Checkbox type='radio'  /> Male</GenderColumn>
+                                    <Checkbox type='radio'  /> BA</GenderColumn>
                             </FlexRow>
                             <FlexRow>
                                 <GenderColumn>
-                                    <Checkbox type='radio'  /> Female</GenderColumn>
+                                    <Checkbox type='radio'  /> MA</GenderColumn>
                             </FlexRow>
                         </CheckboxWrapper>
+                        <NameWrapper/>
+                    </CheckboxWrappppper>
+                    </FlexRow>
+                    <FlexRow>
+                        <NameWrapper> Speciality</NameWrapper>
+                            <StyledInputLarge type="button" onClick={handleOpen} value={selectedItem}></StyledInputLarge>
+                            {!!open && (<Absolute>
+                                {specialities.map(item => (
+                                    <DropdownItem onClick={() => handleSelect(item)}>{item}</DropdownItem>
+                                ))}
+                            </Absolute>)}
+                        <NameWrapper/>
                     </FlexRow>
 
-                    <FlexRow>
-                        Of which country are you a citizen ?
-                        <StyledInputLarge id="text" type="text" />
-                        <div></div>
-                    </FlexRow>
+
                 </FlexColumn>
                 <FlexColumn>
                     <FlexRow>

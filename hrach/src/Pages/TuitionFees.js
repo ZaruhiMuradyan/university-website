@@ -1,6 +1,7 @@
 import {Rctable} from "../RC-TABLE/RcTable";
 import styled from "styled-components";
 import {AnnualTable} from "../ANNUAL-TABLE/RcTable";
+import {connect} from "react-redux";
 
 
 const TuitionsWrapper  = styled.div`
@@ -30,7 +31,7 @@ const Containers  = styled.div`
     text-align: center;
     `
 
-const TuitionFees = () => {
+const TuitionFees = ({tuitionFees}) => {
     return <TuitionsWrapper>
         <Text2>
             B.A. tuition Fees
@@ -42,9 +43,15 @@ const TuitionFees = () => {
             ANNUAL TUITION FEES OF EU MASTERS DEGREE ACCORDING TO EACH PROFESSIONS
         </Text2>
         <Containers>
-            <AnnualTable />
+            <AnnualTable data={tuitionFees}/>
         </Containers>
     </TuitionsWrapper>
 };
 
-export default TuitionFees;
+
+function mapStateToProps(state) {
+
+    return state;
+}
+
+export default connect(mapStateToProps)(TuitionFees);
